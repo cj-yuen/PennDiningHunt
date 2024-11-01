@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,29 @@
 		1CA76FB02CD053410093676B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		50CF63B82CD565F500181FD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DiningHall.swift,
+			);
+			target = 1CA76FA52CD053400093676B /* PennDiningHunt */;
+		};
+		50CF63E22CD566EA00181FD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DiningHallViewModel.swift,
+			);
+			target = 1CA76FA52CD053400093676B /* PennDiningHunt */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		50CF63A42CD5654000181FD8 /* ViewModels */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (50CF63E22CD566EA00181FD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ViewModels; sourceTree = "<group>"; };
+		50CF63A62CD5657600181FD8 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (50CF63B82CD565F500181FD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
+		50CF63A72CD5657E00181FD8 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		1CA76FA32CD053400093676B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -35,6 +58,9 @@
 		1CA76F9D2CD053400093676B = {
 			isa = PBXGroup;
 			children = (
+				50CF63A72CD5657E00181FD8 /* Views */,
+				50CF63A62CD5657600181FD8 /* Models */,
+				50CF63A42CD5654000181FD8 /* ViewModels */,
 				1CA76FA82CD053400093676B /* PennDiningHunt */,
 				1CA76FA72CD053400093676B /* Products */,
 			);
