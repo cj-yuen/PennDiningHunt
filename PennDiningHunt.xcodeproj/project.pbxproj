@@ -33,6 +33,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				DiningHallViewModel.swift,
+				Locations.swift,
 			);
 			target = 1CA76FA52CD053400093676B /* PennDiningHunt */;
 		};
@@ -41,7 +42,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		50CF63A42CD5654000181FD8 /* ViewModels */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (50CF63E22CD566EA00181FD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ViewModels; sourceTree = "<group>"; };
 		50CF63A62CD5657600181FD8 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (50CF63B82CD565F500181FD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
-		50CF63A72CD5657E00181FD8 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,6 @@
 		1CA76F9D2CD053400093676B = {
 			isa = PBXGroup;
 			children = (
-				50CF63A72CD5657E00181FD8 /* Views */,
 				50CF63A62CD5657600181FD8 /* Models */,
 				50CF63A42CD5654000181FD8 /* ViewModels */,
 				1CA76FA82CD053400093676B /* PennDiningHunt */,
