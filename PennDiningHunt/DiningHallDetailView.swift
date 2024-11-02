@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import CoreMotion
 
 struct DiningHallDetailView: View {
+    @EnvironmentObject var viewModel: DiningHallViewModel
     var diningHall: DiningHall
+    private let motionManager = CMMotionManager()
 
     var body: some View {
         VStack {
@@ -21,12 +24,15 @@ struct DiningHallDetailView: View {
                 Text("Already Collected!")
                     .font(.title)
                     .padding()
-            } else if (/* replace with check if within 50 m from dining hall */ false) {
+            } else if (!viewModel.isWithinProximity(hallLocation: diningHall.location)) {
                 Text("Not in range. Get within 50m to collect!")
                     .font(.title)
                     .padding()
             } else {
                 Text("Shake screen to collect!")
+                    .onAppear{
+                        startMotionDetection()
+                    }
                     .font(.title)
                     .padding()
             }
@@ -35,5 +41,28 @@ struct DiningHallDetailView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(diningHall.isCollected ? .green : .red)
         .navigationTitle(diningHall.name)
+        .onDisappear {
+            stopMotionDetection()
+        }
+    }
+                       
+    func startMotionDetection() {
+        if motionManager.isAccelerometerAvailable {
+            motionManager.accelerometerUpdateInterval = 0.2
+            motionManager.startAccelerometerUpdates(to: .main) { data, error in
+                if let data = data {
+                    let acceleration = data.acceleration
+                    let threshold: Double = 2.5
+                    if abs(acceleration.x) > threshold || abs(acceleration.y) > threshold || abs(acceleration.z) > threshold {
+                        viewModel.collectDiningHall(diningHall)
+                        stopMotionDetection()
+                    }
+                }
+            }
+        }
+    }
+                           
+    func stopMotionDetection() {
+        motionManager.stopAccelerometerUpdates()
     }
 }
