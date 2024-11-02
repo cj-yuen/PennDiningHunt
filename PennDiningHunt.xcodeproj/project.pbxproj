@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C31B16D2CD6971700E772FC /* DiningHallDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31B16C2CD6970D00E772FC /* DiningHallDetailView.swift */; };
 		1CA76FAA2CD053400093676B /* PennDiningHuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA76FA92CD053400093676B /* PennDiningHuntApp.swift */; };
 		1CA76FAC2CD053400093676B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA76FAB2CD053400093676B /* ContentView.swift */; };
 		1CA76FAE2CD053410093676B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CA76FAD2CD053410093676B /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C31B16C2CD6970D00E772FC /* DiningHallDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallDetailView.swift; sourceTree = "<group>"; };
 		1CA76FA62CD053400093676B /* PennDiningHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennDiningHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA76FA92CD053400093676B /* PennDiningHuntApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PennDiningHuntApp.swift; sourceTree = "<group>"; };
 		1CA76FAB2CD053400093676B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		1CA76FA82CD053400093676B /* PennDiningHunt */ = {
 			isa = PBXGroup;
 			children = (
+				1C31B16C2CD6970D00E772FC /* DiningHallDetailView.swift */,
 				1CA76FA92CD053400093676B /* PennDiningHuntApp.swift */,
 				1CA76FAB2CD053400093676B /* ContentView.swift */,
 				1CA76FAD2CD053410093676B /* Assets.xcassets */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CA76FAC2CD053400093676B /* ContentView.swift in Sources */,
+				1C31B16D2CD6971700E772FC /* DiningHallDetailView.swift in Sources */,
 				1CA76FAA2CD053400093676B /* PennDiningHuntApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
