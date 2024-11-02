@@ -27,10 +27,29 @@ class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
         locationManager.startUpdatingLocation()
     }
     
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+            requestCurrentLocation()
+        case .denied, .restricted:
+            print("Location access denied or restricted")
+        default:
+            break
+        }
+    }
+    
+    func requestCurrentLocation() {
+        locationManager.requestLocation()
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else { return }
         userLocation = newLocation
         print("Updated user location: \(newLocation)" )
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            print("Failed to get user location: \(error.localizedDescription)")
     }
     
     func collectDiningHall(_ hall: DiningHall) {

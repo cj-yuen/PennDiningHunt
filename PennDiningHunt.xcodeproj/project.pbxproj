@@ -21,6 +21,8 @@
 		1CA76FAB2CD053400093676B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CA76FAD2CD053410093676B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CA76FB02CD053410093676B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		506A10082CD6EB680006D735 /* 1920 Commons.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "1920 Commons.gpx"; path = "../../../Downloads/hw3-gpx-main/1920 Commons.gpx"; sourceTree = "<group>"; };
+		506A10092CD6EC3D0006D735 /* Accenture.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Accenture.gpx; path = "../../../Downloads/hw3-gpx-main/Accenture.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -60,6 +62,8 @@
 		1CA76F9D2CD053400093676B = {
 			isa = PBXGroup;
 			children = (
+				506A10092CD6EC3D0006D735 /* Accenture.gpx */,
+				506A10082CD6EB680006D735 /* 1920 Commons.gpx */,
 				50CF63A62CD5657600181FD8 /* Models */,
 				50CF63A42CD5654000181FD8 /* ViewModels */,
 				1CA76FA82CD053400093676B /* PennDiningHunt */,
@@ -303,6 +307,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PennDiningHunt/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to help you find and collect nearby dining halls";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -331,6 +336,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PennDiningHunt/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to help you find and collect nearby dining halls";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

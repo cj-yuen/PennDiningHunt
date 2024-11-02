@@ -17,7 +17,7 @@ struct ContentView: View {
                 Text("Penn Dining Hunt!")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                Text("Kevin Du & Chris Yuan")
+                Text("Kevin Du & Chris Yuen")
                     .fontWeight(.bold)
                     .fontWidth(.expanded)
                     .padding()
