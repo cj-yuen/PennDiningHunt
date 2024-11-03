@@ -14,7 +14,7 @@ class DiningHall: Identifiable, ObservableObject {
     var location: CLLocationCoordinate2D
     @Published var isCollected: Bool = false
     
-    init(id: UUID, name: String, location: CLLoctionCoordinate2D, isCollected: Bool = false) {
+    init(id: UUID, name: String, location: CLLocationCoordinate2D, isCollected: Bool = false) {
         self.id = id
         self.name = name
         self.location = location
