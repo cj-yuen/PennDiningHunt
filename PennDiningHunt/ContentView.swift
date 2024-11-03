@@ -24,7 +24,7 @@ struct ContentView: View {
             
                 List {
                     ForEach(DiningHall.diningList) { diningHall in
-                        NavigationLink(destination: DiningHallDetailView(diningHall: diningHall)) {
+                        NavigationLink(destination: DiningHallDetailView(viewModel: diningViewModel, diningHall: diningHall)) {
                             HStack {
                                 Text(diningHall.name)
                                 Spacer()

@@ -9,7 +9,7 @@ import SwiftUI
 import CoreMotion
 
 struct DiningHallDetailView: View {
-    @EnvironmentObject var viewModel: DiningHallViewModel
+    @ObservedObject var viewModel: DiningHallViewModel
     var diningHall: DiningHall
     private let motionManager = CMMotionManager()
 
