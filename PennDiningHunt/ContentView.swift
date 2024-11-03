@@ -28,7 +28,7 @@ struct ContentView: View {
                             HStack {
                                 Text(diningHall.name)
                                 Spacer()
-                                if (diningViewModel.isCollected) {
+                                if (diningHall.isCollected) {
                                     Image(systemName: "checkmark.circle.fill")
                                         .foregroundColor(.green)
                                 } else {
@@ -46,6 +46,21 @@ struct ContentView: View {
     }
 }
 
+struct DiningHallRowView: View {
+    @ObservedObject var diningHall: DiningHall
+    var body: some View {
+        HStack {
+            Text(diningHall.name)
+            Spacer()
+            if diningHall.isCollected {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundColor(.green)
+            } else {
+                Text("Not Collected")
+            }
+        }
+    }
+}
 #Preview {
     ContentView()
         .environmentObject(DiningHallViewModel())
