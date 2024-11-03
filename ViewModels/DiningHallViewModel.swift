@@ -31,17 +31,29 @@ class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
     }
     
     func startMotionDetection(for diningHall: DiningHall) {
+        // Prevent starting motion detection if the hall is already collected
+        if diningHall.isCollected {
+            return
+        }
+
         if motionManager.isAccelerometerAvailable {
             motionManager.accelerometerUpdateInterval = 0.2
             motionManager.startAccelerometerUpdates(to: .main) { [weak self] data, error in
+                if let error = error {
+                    print("Error receiving motion data: \(error.localizedDescription)")
+                }
                 if let data = data {
                     let acceleration = data.acceleration
-                    if (abs(acceleration.x) > self?.threshold ?? 0 || abs(acceleration.y) > self?.threshold ?? 0 || abs(acceleration.z) > self?.threshold ?? 0) {
+                    if abs(acceleration.x) > self?.threshold ?? 0 ||
+                        abs(acceleration.y) > self?.threshold ?? 0 ||
+                        abs(acceleration.z) > self?.threshold ?? 0 {
                         self?.collectDiningHall(diningHall)
                         self?.stopMotionDetection()
                     }
                 }
             }
+        } else {
+                print("Accelerometer is not available")
         }
     }
         
@@ -75,8 +87,12 @@ class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
     }
     
     func collectDiningHall(_ hall: DiningHall) {
+        // Ensure the dining hall is collected only once
         if let index = diningHalls.firstIndex(where: { $0.id == hall.id }) {
-            diningHalls[index].isCollected = true
+            if !diningHalls[index].isCollected {
+                diningHalls[index].isCollected = true
+                print("\(hall.name) has been collected!") // Debug confirmation
+            }
         }
     }
     
