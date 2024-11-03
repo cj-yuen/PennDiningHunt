@@ -38,12 +38,13 @@ struct DiningHallDetailView: View {
             }
             
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(diningHall.isCollected ? .green : .red)
-        .navigationTitle(diningHall.name)
         .onDisappear {
             stopMotionDetection()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(diningHall.isCollected ? .green : .red)
+        .navigationTitle(diningHall.name)
+        
     }
                        
     func startMotionDetection() {
@@ -52,7 +53,7 @@ struct DiningHallDetailView: View {
             motionManager.startAccelerometerUpdates(to: .main) { data, error in
                 if let data = data {
                     let acceleration = data.acceleration
-                    let threshold: Double = 2.5
+                    let threshold: Double = 0.5
                     if abs(acceleration.x) > threshold || abs(acceleration.y) > threshold || abs(acceleration.z) > threshold {
                         viewModel.collectDiningHall(diningHall)
                         stopMotionDetection()
