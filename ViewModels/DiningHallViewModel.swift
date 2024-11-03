@@ -7,11 +7,14 @@
 
 import SwiftUI
 import CoreLocation
+import CoreMotion
 
 class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var diningHalls: [DiningHall]
     @Published var userLocation: CLLocation?
     private var locationManager = CLLocationManager()
+    private let motionManager = CMMotionManager()
+    private let threshold: Double = 1.5
     
     let proximityThreshold: Double = 50.0
     
@@ -25,6 +28,25 @@ class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    func startMotionDetection(for diningHall: DiningHall) {
+        if motionManager.isAccelerometerAvailable {
+            motionManager.accelerometerUpdateInterval = 0.2
+            motionManager.startAccelerometerUpdates(to: .main) { [weak self] data, error in
+                if let data = data {
+                    let acceleration = data.acceleration
+                    if abs(acceleration.x) > self?.threshold ?? 0 || abs(acceleration.y) > self?.threshold ?? 0 || abs(acceleration.z) > self?.threshold ?? 0 {
+                        self?.collectDiningHall(diningHall)
+                        self?.stopMotionDetection()
+                    }
+                }
+            }
+        }
+    }
+        
+    func stopMotionDetection() {
+        motionManager.stopAccelerometerUpdates()
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -66,5 +88,9 @@ class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
     
     func hasBeenCollected(_ hall: DiningHall) -> Bool {
         return hall.isCollected
+    }
+    
+    deinit {
+        stopMotionDetection()
     }
 }

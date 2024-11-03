@@ -23,6 +23,7 @@
 		1CA76FB02CD053410093676B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		506A10082CD6EB680006D735 /* 1920 Commons.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "1920 Commons.gpx"; path = "../../../Downloads/hw3-gpx-main/1920 Commons.gpx"; sourceTree = "<group>"; };
 		506A10092CD6EC3D0006D735 /* Accenture.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Accenture.gpx; path = "../../../Downloads/hw3-gpx-main/Accenture.gpx"; sourceTree = "<group>"; };
+		506A100A2CD702F30006D735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -82,6 +83,7 @@
 		1CA76FA82CD053400093676B /* PennDiningHunt */ = {
 			isa = PBXGroup;
 			children = (
+				506A100A2CD702F30006D735 /* Info.plist */,
 				1C31B16C2CD6970D00E772FC /* DiningHallDetailView.swift */,
 				1CA76FA92CD053400093676B /* PennDiningHuntApp.swift */,
 				1CA76FAB2CD053400093676B /* ContentView.swift */,
@@ -307,7 +309,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PennDiningHunt/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PennDiningHunt/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to help you find and collect nearby dining halls";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We need access to your motion to help you collect dining halls";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,7 +340,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PennDiningHunt/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PennDiningHunt/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to help you find and collect nearby dining halls";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We need access to your motion to help you collect dining halls";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
