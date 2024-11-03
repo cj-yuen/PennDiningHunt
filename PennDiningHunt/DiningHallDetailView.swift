@@ -29,6 +29,9 @@ struct DiningHallDetailView: View {
                     .padding()
             } else {
                 Text("Shake screen to collect!")
+                    .onAppear{
+                        viewModel.startMotionDetection(for: diningHall)
+                    }
                     .font(.title)
                     .padding()
             }
@@ -38,9 +41,7 @@ struct DiningHallDetailView: View {
         .background(diningHall.isCollected ? .green : .red)
         .navigationTitle(diningHall.name)
         
-        .onAppear{
-            viewModel.startMotionDetection(for: diningHall)
-        }
+        
         .onDisappear {
             viewModel.stopMotionDetection()
         }
