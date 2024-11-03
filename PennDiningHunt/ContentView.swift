@@ -28,7 +28,7 @@ struct ContentView: View {
                             HStack {
                                 Text(diningHall.name)
                                 Spacer()
-                                if (diningHall.isCollected) {
+                                if (diningViewModel.isCollected) {
                                     Image(systemName: "checkmark.circle.fill")
                                         .foregroundColor(.green)
                                 } else {
