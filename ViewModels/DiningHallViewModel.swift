@@ -36,7 +36,7 @@ class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
             motionManager.startAccelerometerUpdates(to: .main) { [weak self] data, error in
                 if let data = data {
                     let acceleration = data.acceleration
-                    if abs(acceleration.x) > self?.threshold ?? 0 || abs(acceleration.y) > self?.threshold ?? 0 || abs(acceleration.z) > self?.threshold ?? 0 {
+                    if (abs(acceleration.x) > self?.threshold ?? 0 || abs(acceleration.y) > self?.threshold ?? 0 || abs(acceleration.z) > self?.threshold ?? 0) {
                         self?.collectDiningHall(diningHall)
                         self?.stopMotionDetection()
                     }

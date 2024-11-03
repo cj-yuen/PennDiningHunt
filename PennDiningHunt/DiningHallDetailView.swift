@@ -29,20 +29,20 @@ struct DiningHallDetailView: View {
                     .padding()
             } else {
                 Text("Shake screen to collect!")
-                    .onAppear{
-                        viewModel.startMotionDetection(for: diningHall)
-                    }
                     .font(.title)
                     .padding()
             }
             
         }
-        .onDisappear {
-            viewModel.stopMotionDetection()
-        }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(diningHall.isCollected ? .green : .red)
         .navigationTitle(diningHall.name)
         
+        .onAppear{
+            viewModel.startMotionDetection(for: diningHall)
+        }
+        .onDisappear {
+            viewModel.stopMotionDetection()
+        }
     }
 }
