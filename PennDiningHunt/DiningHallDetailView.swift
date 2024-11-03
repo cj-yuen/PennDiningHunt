@@ -10,7 +10,7 @@ import CoreMotion
 
 struct DiningHallDetailView: View {
     @ObservedObject var viewModel: DiningHallViewModel
-    var diningHall: DiningHall
+   @ObservedObject var diningHall: DiningHall
 
     var body: some View {
         VStack {

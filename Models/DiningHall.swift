@@ -8,11 +8,18 @@
 import Foundation
 import CoreLocation
 
-struct DiningHall: Identifiable {
+class DiningHall: Identifiable, ObservableObject {
     var id: UUID
     var name: String
     var location: CLLocationCoordinate2D
-    var isCollected: Bool = false
+    @Published var isCollected: Bool = false
+    
+    init(id: UUID, name: String, location: CLLoctionCoordinate2D, isCollected: Bool = false) {
+        self.id = id
+        self.name = name
+        self.location = location
+        self.isCollected = isCollected
+    }
 }
 extension DiningHall {
     static let diningList: [DiningHall] = [

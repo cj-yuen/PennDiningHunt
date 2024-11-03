@@ -44,16 +44,21 @@ class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
                 }
                 if let data = data {
                     let acceleration = data.acceleration
+                    print("Accelerometer Data - x: \(acceleration.x), y: \(acceleration.y), z: \(acceleration.z)")
                     if abs(acceleration.x) > self?.threshold ?? 0 ||
                         abs(acceleration.y) > self?.threshold ?? 0 ||
                         abs(acceleration.z) > self?.threshold ?? 0 {
-                        self?.collectDiningHall(diningHall)
-                        self?.stopMotionDetection()
+                        // Call collectDiningHall only if it's not collected
+                        let isCollected = self?.diningHalls.first(where: { $0.id == diningHall.id })?.isCollected
+                        if isCollected != true { // Check if isCollected is not true
+                            self?.collectDiningHall(diningHall)
+                            self?.stopMotionDetection() // Stop motion detection after collection
+                        }
                     }
                 }
             }
         } else {
-                print("Accelerometer is not available")
+            print("Accelerometer is not available")
         }
     }
         
@@ -92,6 +97,8 @@ class DiningHallViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
             if !diningHalls[index].isCollected {
                 diningHalls[index].isCollected = true
                 print("\(hall.name) has been collected!") // Debug confirmation
+            } else {
+                print("\(hall.name) was already colleced.")
             }
         }
     }

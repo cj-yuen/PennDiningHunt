@@ -23,7 +23,7 @@ struct ContentView: View {
                     .padding()
             
                 List {
-                    ForEach(DiningHall.diningList) { diningHall in
+                    ForEach(diningViewModel.diningHalls) { diningHall in
                         NavigationLink(destination: DiningHallDetailView(viewModel: diningViewModel, diningHall: diningHall)) {
                             HStack {
                                 Text(diningHall.name)
