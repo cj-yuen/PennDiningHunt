@@ -25,17 +25,7 @@ struct ContentView: View {
                 List {
                     ForEach(diningViewModel.diningHalls) { diningHall in
                         NavigationLink(destination: DiningHallDetailView(viewModel: diningViewModel, diningHall: diningHall)) {
-                            HStack {
-                                Text(diningHall.name)
-                                Spacer()
-                                if (diningHall.isCollected) {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .foregroundColor(.green)
-                                } else {
-                                    Text("Not Collected")
-                                }
-                                    
-                            }
+                            DiningHallRowView(diningHall: diningHall)
                         }
                     }
                 }
